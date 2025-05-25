@@ -1,3 +1,4 @@
+export {};
 // Striver sde sheet - https://takeuforward.org/data-structure/union-of-two-sorted-arrays/
 
 const findUnionUsingMap = (arr1: number[], arr2: number[]): number[] => {
