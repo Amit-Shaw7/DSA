@@ -77,5 +77,5 @@ console.log(num2);
 const num3 = singleNumberBetterUsingMap(nums);
 console.log(num3);
 
-const num4 = singleNumberBetterUsingMap(nums);
+const num4 = singleNumberOptimalUsingXOR(nums);
 console.log(num4);
