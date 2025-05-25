@@ -1,3 +1,4 @@
+export {};
 /**
  * @param {number[]} nums
  * @param {number} k
@@ -5,8 +6,9 @@
  */
 
 // Leetcode -  https://leetcode.com/problems/rotate-numsay/
-let count = 0;
-var rotateBrute = function (nums, k) {
+let count: number = 0;
+
+const rotateBrute = (nums: number[], k: number): void => {
   if (k % nums.length === 0) {
     return;
   } else if (k > nums.length) {
@@ -15,17 +17,17 @@ var rotateBrute = function (nums, k) {
 
   for (let j = 0; j < k; j++) {
     for (let i = nums.length - 1; i > 0; i--) {
-      const temp = nums[i];
+      const temp: number = nums[i];
       nums[i] = nums[i - 1];
       nums[i - 1] = temp;
     }
   }
 };
 
-var rotateOptimal = function (nums, k) {
+const rotateOptimal = (nums: number[], k: number): void => {
   k = k % nums.length; // Normalize k
 
-  const reverse = (start, end) => {
+  const reverse = (start: number, end: number): void => {
     while (start < end) {
       [nums[start], nums[end]] = [nums[end], nums[start]];
       start++;
@@ -38,9 +40,10 @@ var rotateOptimal = function (nums, k) {
   reverse(k, nums.length - 1); // Reverse the rest
 };
 
-let k = 3;
-let nums = [1, 2, 3, 4, 5, 6, 7];
+// ✅ Example usage
+let k: number = 3;
+let nums: number[] = [1, 2, 3, 4, 5, 6, 7];
 
-// rotate(nums, k);
+// rotateBrute(nums, k);
 rotateOptimal(nums, k);
 console.log(nums);

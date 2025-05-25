@@ -1,8 +1,10 @@
+export {};
+
 /**
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
-var moveZeroesBrute = function (nums) {
+var moveZeroesBrute = function (nums: number[]): void {
   let n = nums.length;
 
   for (let i = 0; i < n; i++) {
@@ -21,9 +23,9 @@ var moveZeroesBrute = function (nums) {
   }
 };
 
-var moveZeroesOptimal = function (nums) {
+var moveZeroesOptimal = function (nums: number[]): void {
   let n = nums.length;
-  let indexOfZero = nums?.findIndex((num) => num === 0);
+  let indexOfZero = nums.findIndex((num) => num === 0);
 
   console.log("zero  index : " + indexOfZero);
 
@@ -42,8 +44,8 @@ var moveZeroesOptimal = function (nums) {
   }
 };
 
-const nums = [0, 0, 1];
-// let nums = [0, 12, 0, 0, 0, 0, 0, 12];
+const nums: number[] = [0, 0, 1];
+// const nums: number[] = [0, 12, 0, 0, 0, 0, 0, 12];
 
 moveZeroesOptimal(nums);
 console.log(nums);

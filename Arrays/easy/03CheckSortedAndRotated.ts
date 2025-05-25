@@ -1,3 +1,5 @@
+export {};
+
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -5,8 +7,9 @@
 
 // leetcode - https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/
 
-var check = function (nums) {
-  let rotationIdx = null;
+const check = (nums: number[]): boolean => {
+  let rotationIdx: number | null = null;
+
   for (let i = 0; i < nums.length - 1; i++) {
     const current = nums[i];
     const next = nums[i + 1];
@@ -16,13 +19,17 @@ var check = function (nums) {
     }
   }
 
-  if (rotationIdx || rotationIdx === 0) {
+  if (rotationIdx !== null) {
     if (nums[0] < nums[nums.length - 1]) {
       return false;
     }
   }
 
-  for (let i = rotationIdx + 1; i < nums.length; i++) {
+  for (
+    let i = rotationIdx !== null ? rotationIdx + 1 : 0;
+    i < nums.length - 1;
+    i++
+  ) {
     const current = nums[i];
     const next = nums[i + 1];
     if (current > next) {
@@ -33,6 +40,6 @@ var check = function (nums) {
   return true;
 };
 
-const nums = [3, 4, 5, 1, 2];
-const result = check(nums);
+const nums: number[] = [3, 4, 5, 1, 2];
+const result: boolean = check(nums);
 console.log(result);
