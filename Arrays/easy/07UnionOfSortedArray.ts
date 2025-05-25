@@ -6,11 +6,11 @@ const findUnionUsingMap = (arr1: number[], arr2: number[]): number[] => {
   let freq: Map<number, number> = new Map();
 
   for (let i: number = 0; i < arr1.length; i++) {
-    freq.set(arr1[i], freq.get(arr1[i]) || 1);
+    freq.set(arr1[i], (freq.get(arr1[i]) || 0) + 1);
   }
 
   for (let i: number = 0; i < arr2.length; i++) {
-    freq.set(arr2[i], freq.get(arr2[i]) || 1);
+    freq.set(arr2[i], (freq.get(arr2[i]) || 0) + 1);
   }
 
   for (let [key, value] of freq) {
